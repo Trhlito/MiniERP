@@ -1,0 +1,120 @@
+-- Vytvoření databáze bez pevně daných cest
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'MiniERP')
+BEGIN
+    CREATE DATABASE MiniERP;
+END
+GO
+
+USE MiniERP;
+GO
+
+-- Uživatelský datový typ pro objednávky
+CREATE TYPE dbo.OrderItemType AS TABLE(
+    ProductID INT NULL,
+    Quantity INT NULL,
+    UnitPrice DECIMAL(18, 2) NULL
+);
+GO
+
+-- Zákazníci
+CREATE TABLE Customers (
+    CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100),
+    Phone NVARCHAR(20)
+);
+GO
+
+-- Objednávky
+CREATE TABLE Orders (
+    OrderID INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT NOT NULL,
+    OrderDate DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+GO
+
+-- Produkty
+CREATE TABLE Products (
+    ProductID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+    Stock INT NOT NULL,
+    Category NVARCHAR(50) NOT NULL DEFAULT 'Neurčeno',
+    ProductCode NVARCHAR(10) NOT NULL DEFAULT ''
+);
+GO
+
+-- Položky objednávky
+CREATE TABLE OrderItems (
+    OrderItemID INT IDENTITY(1,1) PRIMARY KEY,
+    OrderID INT NOT NULL,
+    ProductID INT NOT NULL,
+    Quantity INT NOT NULL CHECK (Quantity > 0),
+    UnitPrice DECIMAL(10, 2) NOT NULL CHECK (UnitPrice >= 0),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+GO
+
+-- Pohyb zásob (krok 3)
+CREATE TABLE StockMovements (
+    MovementID INT IDENTITY(1,1) PRIMARY KEY,
+    ProductID INT NOT NULL,
+    MovementType NVARCHAR(20) NOT NULL,  -- 'Příjem' nebo 'Výdej'
+    Quantity INT NOT NULL,
+    MovementDate DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+GO
+
+-- Stored procedure pro vytvoření produktu s automatickým ProductCode
+CREATE PROCEDURE InsertProductWithCode
+    @Name NVARCHAR(100),
+    @Price DECIMAL(10,2),
+    @Stock INT,
+    @Category NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @Prefix CHAR(1);
+    DECLARE @NextNumber INT;
+    DECLARE @ProductCode NVARCHAR(10);
+
+    SET @Prefix = CASE 
+                    WHEN @Category = 'Notebook' THEN 'A'
+                    WHEN @Category = 'Monitor' THEN 'B'
+                    WHEN @Category = 'Příslušenství' THEN 'C'
+                    ELSE 'X'
+                 END;
+
+    SELECT @NextNumber = 
+        ISNULL(MAX(CAST(SUBSTRING(ProductCode, 2, LEN(ProductCode) - 1) AS INT)), 0) + 1
+    FROM Products
+    WHERE LEFT(ProductCode, 1) = @Prefix;
+
+    SET @ProductCode = @Prefix + CAST(@NextNumber AS VARCHAR);
+
+    INSERT INTO Products (ProductCode, Name, Price, Stock, Category)
+    VALUES (@ProductCode, @Name, @Price, @Stock, @Category);
+END;
+GO
+
+-- Stored procedure pro vytvoření objednávky s položkami
+CREATE PROCEDURE spCreateOrderWithItems
+    @CustomerID INT,
+    @OrderDate DATETIME,
+    @Items dbo.OrderItemType READONLY
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Orders (CustomerID, OrderDate)
+    VALUES (@CustomerID, @OrderDate);
+
+    DECLARE @NewOrderID INT = SCOPE_IDENTITY();
+
+    INSERT INTO OrderItems (OrderID, ProductID, Quantity, UnitPrice)
+    SELECT @NewOrderID, ProductID, Quantity, UnitPrice
+    FROM @Items;
+END;
+GO
