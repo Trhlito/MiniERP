@@ -8,7 +8,7 @@ GO
 USE MiniERP;
 GO
 
--- Uživatelský datový typ pro objednávky
+-- Datový typ pro objednávky
 CREATE TYPE dbo.OrderItemType AS TABLE(
     ProductID INT NULL,
     Quantity INT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE Products (
 );
 GO
 
--- Položky objednávky
+-- Objednávky - položky
 CREATE TABLE OrderItems (
     OrderItemID INT IDENTITY(1,1) PRIMARY KEY,
     OrderID INT NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE OrderItems (
 );
 GO
 
--- Pohyb zásob (krok 3)
+-- Pohyb Skladu
 CREATE TABLE StockMovements (
     MovementID INT IDENTITY(1,1) PRIMARY KEY,
     ProductID INT NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE StockMovements (
 );
 GO
 
--- Stored procedure pro vytvoření produktu s automatickým ProductCode
+-- Procedura pro vytvoření produktu s automatickým Produktovým kódem
 CREATE PROCEDURE InsertProductWithCode
     @Name NVARCHAR(100),
     @Price DECIMAL(10,2),
@@ -99,7 +99,7 @@ BEGIN
 END;
 GO
 
--- Stored procedure pro vytvoření objednávky s položkami
+-- Procedura pro vytvoření objednávky s položkami
 CREATE PROCEDURE spCreateOrderWithItems
     @CustomerID INT,
     @OrderDate DATETIME,
