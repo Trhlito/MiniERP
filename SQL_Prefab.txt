@@ -1,0 +1,20 @@
+# Zákazníci
+
+INSERT INTO Customers (Name, Email, Phone)
+VALUES 
+('Jan Novák', 'jan.novak@gmail.com', '+420601123456'),
+('Petra Dvořáková', 'petra.dvorakova@gmail.com', '+420602987654'),
+('Tomáš Malý', 'tomas.maly@gmail.com', '+420603112233'),
+('Lucie Králová', 'lucie.kralova@gmail.com', '+420604998877'),
+('Martin Černý', 'martin.cerny@gmail.com', '+420605556677');
+
+
+# Produkty
+
+INSERT INTO Products (Name, Price, Stock, Category, ProductCode)
+VALUES 
+('Notebook Lenovo ThinkPad E15', 21500.00, 10, 'Notebook', 'A1'),
+('Monitor Dell UltraSharp 27"', 7200.00, 15, 'Monitor', 'B1'),
+('Bezdrátová myš Logitech MX Master 3S', 2500.00, 30, 'Příslušenství', 'C1'),
+('Klávesnice Mechanická Razer BlackWidow', 3100.00, 20, 'Příslušenství', 'C2'),
+('Docking station HP USB-C G5', 4200.00, 12, 'Příslušenství', 'C3');
