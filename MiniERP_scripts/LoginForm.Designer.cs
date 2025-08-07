@@ -1,4 +1,4 @@
-﻿namespace ERP3
+namespace ERP3
 {
     partial class LoginForm
     {
@@ -16,53 +16,59 @@
             txtPassword = new TextBox();
             btnOk = new Button();
             SuspendLayout();
+
             // 
             // lblUsername
-            // 
+            // Popisek pro uživatelské jméno
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(167, 38);
+            lblUsername.Location = new Point(50, 30);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(60, 15);
+            lblUsername.Size = new Size(116, 15);
             lblUsername.TabIndex = 1;
-            lblUsername.Text = "Username";
-            // 
-            // lblPassword
-            // 
-            lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(167, 105);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(57, 15);
-            lblPassword.TabIndex = 2;
-            lblPassword.Text = "Password";
+            lblUsername.Text = "Přihlašovací jméno";
+
             // 
             // txtUsername
-            // 
-            txtUsername.Location = new Point(125, 56);
+            // TextBox pro zadání uživatelského jména
+            txtUsername.Location = new Point(50, 50);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(147, 23);
-            txtUsername.TabIndex = 3;
+            txtUsername.Size = new Size(200, 23);
+            txtUsername.TabIndex = 2;
+
+            // 
+            // lblPassword
+            // Popisek pro heslo
+            lblPassword.AutoSize = true;
+            lblPassword.Location = new Point(50, 85);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(39, 15);
+            lblPassword.TabIndex = 3;
+            lblPassword.Text = "Heslo";
+
             // 
             // txtPassword
-            // 
-            txtPassword.Location = new Point(125, 123);
+            // TextBox pro zadání hesla
+            txtPassword.Location = new Point(50, 105);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(147, 23);
+            txtPassword.Size = new Size(200, 23);
             txtPassword.TabIndex = 4;
+
             // 
             // btnOk
-            // 
-            btnOk.Location = new Point(149, 174);
+            // Tlačítko pro potvrzení přihlášení
+            btnOk.Location = new Point(90, 150);
             btnOk.Name = "btnOk";
-            btnOk.Size = new Size(96, 35);
+            btnOk.Size = new Size(120, 35);
             btnOk.TabIndex = 5;
             btnOk.Text = "Potvrdit";
             btnOk.UseVisualStyleBackColor = true;
             btnOk.Click += btnOk_Click;
+
             // 
             // LoginForm
-            // 
-            ClientSize = new Size(409, 272);
+            // Vlastnosti formuláře přihlášení
+            ClientSize = new Size(300, 220);
             Controls.Add(btnOk);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
