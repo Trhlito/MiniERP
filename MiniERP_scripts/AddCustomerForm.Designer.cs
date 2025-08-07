@@ -1,4 +1,4 @@
-﻿namespace ERP3
+namespace ERP3
 {
     partial class AddCustomerForm
     {
@@ -42,11 +42,10 @@
             this.lblName.Location = new System.Drawing.Point(30, 30);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(100, 20);
-            this.lblName.Text = "Name:";
+            this.lblName.Text = "Jméno:"; 
 
             // 
             // txtName
-            // Vstupní pole pro jméno zákazníka
             this.txtName.Location = new System.Drawing.Point(140, 30);
             this.txtName.Size = new System.Drawing.Size(200, 23);
             this.txtName.Name = "txtName";
@@ -57,11 +56,10 @@
             this.lblEmail.Location = new System.Drawing.Point(30, 70);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(100, 20);
-            this.lblEmail.Text = "Email:";
+            this.lblEmail.Text = "E-mail:"; 
 
             // 
             // txtEmail
-            // Vstupní pole pro e-mail
             this.txtEmail.Location = new System.Drawing.Point(140, 70);
             this.txtEmail.Size = new System.Drawing.Size(200, 23);
             this.txtEmail.Name = "txtEmail";
@@ -72,11 +70,10 @@
             this.lblPhone.Location = new System.Drawing.Point(30, 110);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(100, 20);
-            this.lblPhone.Text = "Phone:";
+            this.lblPhone.Text = "Telefon:"; 
 
             // 
             // txtPhone
-            // Vstupní pole pro telefon
             this.txtPhone.Location = new System.Drawing.Point(140, 110);
             this.txtPhone.Size = new System.Drawing.Size(200, 23);
             this.txtPhone.Name = "txtPhone";
@@ -87,7 +84,7 @@
             this.btnSave.Location = new System.Drawing.Point(140, 150);
             this.btnSave.Size = new System.Drawing.Size(100, 30);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Uložit"; 
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 
@@ -101,7 +98,6 @@
 
             // 
             // AddCustomerForm
-            // Vlastnosti hlavního formuláře
             this.ClientSize = new System.Drawing.Size(380, 240);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtName);
@@ -116,7 +112,7 @@
             this.MinimizeBox = false;
             this.Name = "AddCustomerForm";
             this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "Add Customer";
+            this.Text = "Přidat zákazníka"; 
             this.ResumeLayout(false);
             this.PerformLayout();
         }
