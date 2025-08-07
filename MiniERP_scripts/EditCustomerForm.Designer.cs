@@ -1,4 +1,4 @@
-﻿namespace ERP3
+namespace ERP3
 {
     partial class EditCustomerForm
     {
@@ -34,56 +34,40 @@
 
             SuspendLayout();
 
-            // 
-            // lblName
-            // Popisek pro jméno zákazníka
-            lblName.Text = "Name:";
+            // lblName – popisek pro jméno
+            lblName.Text = "Jméno:";
             lblName.Location = new System.Drawing.Point(20, 20);
             lblName.Size = new System.Drawing.Size(100, 20);
 
-            // 
-            // txtName
-            // TextBox pro úpravu jména
+            // txtName – pole pro jméno
             txtName.Location = new System.Drawing.Point(120, 20);
             txtName.Size = new System.Drawing.Size(200, 23);
 
-            // 
-            // lblEmail
-            // Popisek pro e-mail
-            lblEmail.Text = "Email:";
+            // lblEmail – popisek pro e-mail
+            lblEmail.Text = "E-mail:";
             lblEmail.Location = new System.Drawing.Point(20, 60);
             lblEmail.Size = new System.Drawing.Size(100, 20);
 
-            // 
-            // txtEmail
-            // TextBox pro úpravu e-mailu
+            // txtEmail – pole pro e-mail
             txtEmail.Location = new System.Drawing.Point(120, 60);
             txtEmail.Size = new System.Drawing.Size(200, 23);
 
-            // 
-            // lblPhone
-            // Popisek pro telefon
-            lblPhone.Text = "Phone:";
+            // lblPhone – popisek pro telefon
+            lblPhone.Text = "Telefon:";
             lblPhone.Location = new System.Drawing.Point(20, 100);
             lblPhone.Size = new System.Drawing.Size(100, 20);
 
-            // 
-            // txtPhone
-            // TextBox pro úpravu telefonu
+            // txtPhone – pole pro telefon
             txtPhone.Location = new System.Drawing.Point(120, 100);
             txtPhone.Size = new System.Drawing.Size(200, 23);
 
-            // 
-            // btnSave
-            // Tlačítko pro uložení změn
-            btnSave.Text = "Save";
+            // btnSave – tlačítko pro uložení změn
+            btnSave.Text = "Uložit";
             btnSave.Location = new System.Drawing.Point(120, 140);
             btnSave.Size = new System.Drawing.Size(100, 30);
             btnSave.Click += new System.EventHandler(btnSave_Click);
 
-            // 
-            // EditCustomerForm
-            // Nastavení hlavního formuláře
+            // EditCustomerForm – konfigurace formuláře
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(350, 200);
@@ -95,7 +79,7 @@
             Controls.Add(txtPhone);
             Controls.Add(btnSave);
             Name = "EditCustomerForm";
-            Text = "Edit Customer";
+            Text = "Upravit zákazníka";
             ResumeLayout(false);
             PerformLayout();
         }
