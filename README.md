@@ -73,4 +73,5 @@ Každý produkt má i svůj **ProductCode**, který se generuje automaticky podl
 
 ## Spuštění
 
-Pro úspěšné spuštění je zde přidaný soubor s názvem: MiniERP_SQL 
+Pro úspěšné spuštění je zde přiložen soubor s názvem: MiniERP_SQL 
+pro načtení testovacích dat přiložen soubor s názvem: SQL_Prefab
