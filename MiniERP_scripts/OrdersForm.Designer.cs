@@ -1,4 +1,4 @@
-﻿namespace ERP3
+namespace ERP3
 {
     partial class OrdersForm
     {
@@ -29,37 +29,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
 
-            // lblCustomer
+            // lblCustomer – popisek k výběru zákazníka
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Location = new System.Drawing.Point(20, 20);
             this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(97, 13);
+            this.lblCustomer.Size = new System.Drawing.Size(57, 15);
             this.lblCustomer.TabIndex = 0;
             this.lblCustomer.Text = "Zákazník:";
 
-            // cmbCustomers
+            // cmbCustomers – rozbalovací seznam zákazníků
             this.cmbCustomers.FormattingEnabled = true;
             this.cmbCustomers.Location = new System.Drawing.Point(130, 17);
             this.cmbCustomers.Name = "cmbCustomers";
-            this.cmbCustomers.Size = new System.Drawing.Size(300, 21);
+            this.cmbCustomers.Size = new System.Drawing.Size(300, 23);
             this.cmbCustomers.TabIndex = 1;
 
-            // lblProducts
+            // lblProducts – popisek k produktům
             this.lblProducts.AutoSize = true;
             this.lblProducts.Location = new System.Drawing.Point(20, 60);
             this.lblProducts.Name = "lblProducts";
-            this.lblProducts.Size = new System.Drawing.Size(96, 13);
+            this.lblProducts.Size = new System.Drawing.Size(112, 15);
             this.lblProducts.TabIndex = 2;
             this.lblProducts.Text = "Dostupné produkty:";
 
-            // dgvProducts
+            // dgvProducts – tabulka s produkty
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(20, 80);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.Size = new System.Drawing.Size(600, 250);
             this.dgvProducts.TabIndex = 3;
 
-            // btnCreateOrder
+            // btnCreateOrder – tlačítko pro vytvoření objednávky
             this.btnCreateOrder.Location = new System.Drawing.Point(520, 350);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(100, 30);
@@ -68,7 +68,7 @@
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
 
-            // OrdersForm
+            // OrdersForm – hlavní konfigurace formuláře
             this.ClientSize = new System.Drawing.Size(650, 400);
             this.Controls.Add(this.lblCustomer);
             this.Controls.Add(this.cmbCustomers);
