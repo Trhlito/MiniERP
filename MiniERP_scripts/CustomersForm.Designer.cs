@@ -1,14 +1,12 @@
-﻿namespace ERP3
+namespace ERP3
 {
     partial class CustomersForm
     {
-        // Ovládací prvky formuláře
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Button btnLoadCustomers;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridCustomers;
 
-        // Uvolnění prostředků při zavírání formuláře
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -17,7 +15,6 @@
             base.Dispose(disposing);
         }
 
-        // Inicializace uživatelského rozhraní pro práci se zákazníky
         private void InitializeComponent()
         {
             btnLoadCustomers = new Button();
@@ -30,9 +27,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridCustomers).BeginInit();
             SuspendLayout();
 
-            // 
-            // dataGridCustomers
-            // Zobrazení zákazníků v tabulkové formě
+            // dataGridCustomers – tabulka zákazníků
             dataGridCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridCustomers.Location = new Point(20, 20);
             dataGridCustomers.MultiSelect = false;
@@ -41,58 +36,46 @@
             dataGridCustomers.Size = new Size(610, 280);
             dataGridCustomers.TabIndex = 0;
 
-            // 
-            // btnLoadCustomers
-            // Tlačítko pro načtení zákazníků z databáze
+            // btnLoadCustomers – tlačítko pro načtení zákazníků
             btnLoadCustomers.Location = new Point(20, 310);
             btnLoadCustomers.Name = "btnLoadCustomers";
             btnLoadCustomers.Size = new Size(150, 30);
-            btnLoadCustomers.Text = "Load Customers";
+            btnLoadCustomers.Text = "Načíst zákazníky";
             btnLoadCustomers.UseVisualStyleBackColor = true;
             btnLoadCustomers.Click += btnLoadCustomers_Click;
 
-            // 
-            // btnAddCustomer
-            // Tlačítko pro přidání nového zákazníka
+            // btnAddCustomer – přidání zákazníka
             btnAddCustomer.Location = new Point(180, 310);
             btnAddCustomer.Name = "btnAddCustomer";
             btnAddCustomer.Size = new Size(130, 30);
-            btnAddCustomer.Text = "Add";
+            btnAddCustomer.Text = "Přidat";
             btnAddCustomer.UseVisualStyleBackColor = true;
             btnAddCustomer.Click += (s, e) => AddCustomer();
 
-            // 
-            // btnEditCustomer
-            // Tlačítko pro úpravu vybraného zákazníka
+            // btnEditCustomer – úprava zákazníka
             btnEditCustomer.Location = new Point(320, 310);
             btnEditCustomer.Name = "btnEditCustomer";
             btnEditCustomer.Size = new Size(130, 30);
-            btnEditCustomer.Text = "Edit";
+            btnEditCustomer.Text = "Upravit";
             btnEditCustomer.UseVisualStyleBackColor = true;
             btnEditCustomer.Click += (s, e) => EditCustomer();
 
-            // 
-            // btnDeleteCustomer
-            // Tlačítko pro smazání vybraného zákazníka
+            // btnDeleteCustomer – smazání zákazníka
             btnDeleteCustomer.Location = new Point(460, 310);
             btnDeleteCustomer.Name = "btnDeleteCustomer";
             btnDeleteCustomer.Size = new Size(130, 30);
-            btnDeleteCustomer.Text = "Delete";
+            btnDeleteCustomer.Text = "Smazat";
             btnDeleteCustomer.UseVisualStyleBackColor = true;
             btnDeleteCustomer.Click += (s, e) => DeleteCustomer();
 
-            // 
-            // txtSearch
-            // Vyhledávací pole pro filtrování zákazníků
+            // txtSearch – hledání zákazníků
             txtSearch.Location = new Point(20, 350);
             txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Search customer...";
+            txtSearch.PlaceholderText = "Hledat zákazníka...";
             txtSearch.Size = new Size(610, 23);
             txtSearch.TextChanged += txtSearch_TextChanged;
 
-            // 
-            // CustomersForm
-            // Konfigurace hlavního formuláře
+            // CustomersForm – nastavení okna
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(652, 400);
@@ -104,7 +87,7 @@
             Controls.Add(txtSearch);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CustomersForm";
-            Text = "Customers";
+            Text = "Zákazníci";
             Load += CustomersForm_Load;
 
             ((System.ComponentModel.ISupportInitialize)dataGridCustomers).EndInit();
