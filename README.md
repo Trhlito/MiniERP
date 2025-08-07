@@ -18,7 +18,6 @@ Toto je jednoduchá WinForms aplikace, kterou jsem vytvořil jako menší domác
 - **.NET 6 / C# (WinForms)**
 - **SQL Server Express** (lokální instance)
 - **Stored procedury + typy tabulek** (např. pro objednávky)
-- Pár pokusů o validaci, MessageBoxy atd.
 
 ## Jak spustit
 
