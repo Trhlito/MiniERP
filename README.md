@@ -28,7 +28,12 @@ Toto je jednoduchá WinForms aplikace, kterou jsem vytvořil jako menší domác
 4. Spustit
 
 
+# ---------------------		Přihlášení				---------------------
 
+Pro vstup do aplikace použijte následující údaje:
+
+- Uživatelské jméno: admin
+- Heslo: admin
 
 
 
