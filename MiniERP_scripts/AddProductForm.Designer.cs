@@ -1,4 +1,4 @@
-﻿namespace ERP3
+namespace ERP3
 {
     partial class AddProductForm
     {
@@ -28,42 +28,46 @@
 
             this.SuspendLayout();
 
-            // Pole pro název produktu
+            // txtName – Pole pro název produktu
             this.txtName.Location = new System.Drawing.Point(30, 30);
             this.txtName.Name = "txtName";
-            this.txtName.PlaceholderText = "Název produktu";
+            this.txtName.PlaceholderText = "Název produktu"; 
             this.txtName.Size = new System.Drawing.Size(240, 23);
 
-            // Pole pro zadání ceny
+            // txtPrice – Pole pro zadání ceny
             this.txtPrice.Location = new System.Drawing.Point(30, 70);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.PlaceholderText = "Cena";
+            this.txtPrice.PlaceholderText = "Cena"; 
             this.txtPrice.Size = new System.Drawing.Size(240, 23);
 
-            // Výběr kategorie z předdefinovaných hodnot
+            // cmbCategory – Výběr kategorie z předdefinovaných hodnot
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.Location = new System.Drawing.Point(30, 110);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(240, 23);
-            this.cmbCategory.Items.AddRange(new object[] { "Notebook", "Monitor", "Příslušenství" });
+            this.cmbCategory.Items.AddRange(new object[] {
+                "Notebook",
+                "Monitor",
+                "Příslušenství"
+            });
 
-            // Tlačítko pro uložení produktu
+            // btnSave – Tlačítko pro uložení produktu
             this.btnSave.Location = new System.Drawing.Point(30, 150);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 30);
-            this.btnSave.Text = "Uložit";
+            this.btnSave.Text = "Uložit"; 
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 
-            // Tlačítko pro zrušení a zavření formuláře
+            // btnCancel – Tlačítko pro zrušení a zavření formuláře
             this.btnCancel.Location = new System.Drawing.Point(170, 150);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 30);
-            this.btnCancel.Text = "Zrušit";
+            this.btnCancel.Text = "Zrušit"; 
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 
-            // Nastavení vlastností formuláře
+            // AddProductForm – Nastavení vlastností formuláře
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 210);
