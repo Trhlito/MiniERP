@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
 namespace ERP3
@@ -18,7 +18,7 @@ namespace ERP3
 
             // Add default welcome content
             Label lblWelcome = new Label();
-            lblWelcome.Text = "Welcome to the MiniERP System!";
+            lblWelcome.Text = "Vítejte v systému MiniERP!";
             lblWelcome.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             lblWelcome.AutoSize = true;
             lblWelcome.Location = new Point(20, 20);
