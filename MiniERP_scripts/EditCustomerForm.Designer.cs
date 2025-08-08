@@ -4,7 +4,7 @@ namespace ERP3
     {
         private System.ComponentModel.IContainer components = null;
 
-        // Ovládací prvky formuláře
+        // Ovladače
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
@@ -13,7 +13,7 @@ namespace ERP3
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPhone;
 
-        // Uvolnění prostředků při zavření
+        // Uvolnění prostředků 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,7 +21,7 @@ namespace ERP3
             base.Dispose(disposing);
         }
 
-        // Inicializace prvků uživatelského rozhraní
+        // Uživatelského rozhraní
         private void InitializeComponent()
         {
             txtName = new TextBox();
@@ -34,40 +34,40 @@ namespace ERP3
 
             SuspendLayout();
 
-            // lblName – popisek pro jméno
+            // Popisek pro pole "Jméno"
             lblName.Text = "Jméno:";
             lblName.Location = new System.Drawing.Point(20, 20);
             lblName.Size = new System.Drawing.Size(100, 20);
 
-            // txtName – pole pro jméno
+            // text:Jméno
             txtName.Location = new System.Drawing.Point(120, 20);
             txtName.Size = new System.Drawing.Size(200, 23);
 
-            // lblEmail – popisek pro e-mail
+            // Popisek pro pole "E-mail"
             lblEmail.Text = "E-mail:";
             lblEmail.Location = new System.Drawing.Point(20, 60);
             lblEmail.Size = new System.Drawing.Size(100, 20);
 
-            // txtEmail – pole pro e-mail
+            // text:Email
             txtEmail.Location = new System.Drawing.Point(120, 60);
             txtEmail.Size = new System.Drawing.Size(200, 23);
 
-            // lblPhone – popisek pro telefon
+            // Popisek pro pole "Telefon"
             lblPhone.Text = "Telefon:";
             lblPhone.Location = new System.Drawing.Point(20, 100);
             lblPhone.Size = new System.Drawing.Size(100, 20);
 
-            // txtPhone – pole pro telefon
+            // text:Telefonní číslo
             txtPhone.Location = new System.Drawing.Point(120, 100);
             txtPhone.Size = new System.Drawing.Size(200, 23);
 
-            // btnSave – tlačítko pro uložení změn
+            // Tlačítko pro uložení změny u zákazníka
             btnSave.Text = "Uložit";
             btnSave.Location = new System.Drawing.Point(120, 140);
             btnSave.Size = new System.Drawing.Size(100, 30);
             btnSave.Click += new System.EventHandler(btnSave_Click);
 
-            // EditCustomerForm – konfigurace formuláře
+            // Vlastnosti
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(350, 200);
