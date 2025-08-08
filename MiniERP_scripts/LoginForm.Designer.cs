@@ -8,6 +8,8 @@ namespace ERP3
         private TextBox txtPassword;
         private Button btnOk;
 
+
+        // Vlastnosti
         private void InitializeComponent()
         {
             lblUsername = new Label();
@@ -17,8 +19,7 @@ namespace ERP3
             btnOk = new Button();
             SuspendLayout();
 
-            // 
-            // lblUsername
+            
             // Popisek pro uživatelské jméno
             lblUsername.AutoSize = true;
             lblUsername.Location = new Point(50, 30);
@@ -27,16 +28,12 @@ namespace ERP3
             lblUsername.TabIndex = 1;
             lblUsername.Text = "Přihlašovací jméno";
 
-            // 
-            // txtUsername
-            // TextBox pro zadání uživatelského jména
+            // text: uživatelské jméno
             txtUsername.Location = new Point(50, 50);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(200, 23);
             txtUsername.TabIndex = 2;
 
-            // 
-            // lblPassword
             // Popisek pro heslo
             lblPassword.AutoSize = true;
             lblPassword.Location = new Point(50, 85);
@@ -45,17 +42,13 @@ namespace ERP3
             lblPassword.TabIndex = 3;
             lblPassword.Text = "Heslo";
 
-            // 
-            // txtPassword
-            // TextBox pro zadání hesla
+            // text: heslo
             txtPassword.Location = new Point(50, 105);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(200, 23);
             txtPassword.TabIndex = 4;
 
-            // 
-            // btnOk
             // Tlačítko pro potvrzení přihlášení
             btnOk.Location = new Point(90, 150);
             btnOk.Name = "btnOk";
@@ -65,9 +58,7 @@ namespace ERP3
             btnOk.UseVisualStyleBackColor = true;
             btnOk.Click += btnOk_Click;
 
-            // 
-            // LoginForm
-            // Vlastnosti formuláře přihlášení
+            // Vlastnosti 
             ClientSize = new Size(300, 220);
             Controls.Add(btnOk);
             Controls.Add(txtPassword);
