@@ -27,7 +27,7 @@ namespace ERP3
             string newEmail = txtEmail.Text.Trim();
             string newPhone = txtPhone.Text.Trim();
 
-            // Validace nutných polí
+            // Kontrola nutných polí
             if (string.IsNullOrWhiteSpace(newName) || string.IsNullOrWhiteSpace(newEmail))
             {
                 MessageBox.Show("Please fill in both name and email.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
