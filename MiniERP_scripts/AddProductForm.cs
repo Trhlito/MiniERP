@@ -18,38 +18,38 @@ namespace ERP3
             this.Close();
         }
 
-        // Zpracuje uložení nového produktu do databáze
+        // Uložení nového produktu 
         private void btnSave_Click(object sender, EventArgs e)
         {
             string name = txtName.Text.Trim();
             string category = cmbCategory.SelectedItem?.ToString() ?? "";
             decimal price;
 
-            // Validace: kontrola vyplněného názvu a kategorie
+            // Kontrola vyplněného názvu a kategorie
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(category))
             {
                 MessageBox.Show("Vyplňte prosím název a kategorii produktu.");
                 return;
             }
 
-            // Validace: cena musí být platné číslo a nesmí být záporná
+            // Validace, že cena musí být platné číslo a nesmí být záporné
             if (!decimal.TryParse(txtPrice.Text, out price) || price < 0)
             {
                 MessageBox.Show("Neplatná cena.");
                 return;
             }
 
-            // Připojovací řetězec k databázi
+            // Připojení k databázi
             string connectionString = @"Server=localhost\SQLEXPRESS;Database=MiniERP;Trusted_Connection=True;TrustServerCertificate=True;";
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand("InsertProductsWithCode", conn)) // Volání uložené procedury
+                using (SqlCommand cmd = new SqlCommand("InsertProductsWithCode", conn)) // Volání uložené procedury (InsertProductsWithCode)
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Předání parametrů do procedury
+                    // Předání parametrů 
                     cmd.Parameters.AddWithValue("@Name", name);
                     cmd.Parameters.AddWithValue("@Category", category);
                     cmd.Parameters.AddWithValue("@Price", price);
@@ -65,7 +65,7 @@ namespace ERP3
             }
             catch (Exception ex)
             {
-                // Zobrazení chybové hlášky v případě selhání
+                // Zobrazení chybové hlášky
                 MessageBox.Show("Chyba při přidávání produktu: " + ex.Message);
             }
         }
