@@ -17,7 +17,7 @@
             base.Dispose(disposing);
         }
 
-        // Inicializace komponent formuláře
+        // Ovladače
         private void InitializeComponent()
         {
             txtName = new System.Windows.Forms.TextBox();
@@ -28,26 +28,26 @@
 
             SuspendLayout();
 
-            // TextBox pro název produktu
+            // Pro změnu Jména
             txtName.Location = new System.Drawing.Point(30, 30);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Název produktu";
             txtName.Size = new System.Drawing.Size(240, 23);
 
-            // TextBox pro cenu
+            // Pro změnu ceny
             txtPrice.Location = new System.Drawing.Point(30, 70);
             txtPrice.Name = "txtPrice";
             txtPrice.PlaceholderText = "Cena";
             txtPrice.Size = new System.Drawing.Size(240, 23);
 
-            // ComboBox pro výběr kategorie
+            //  Výběr kategorie (rozbalovacím seznamem)
             cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbCategory.Location = new System.Drawing.Point(30, 110);
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new System.Drawing.Size(240, 23);
             cmbCategory.Items.AddRange(new object[] { "Notebook", "Monitor", "Příslušenství" });
 
-            // Tlačítko pro uložení změn
+            // Tlačítko pro uložení změn u produktu
             btnSave.Location = new System.Drawing.Point(30, 150);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(100, 30);
@@ -55,7 +55,7 @@
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += new System.EventHandler(btnSave_Click);
 
-            // Tlačítko pro zrušení úprav
+            // Tlačítko pro zrušení těchto úprav
             btnCancel.Location = new System.Drawing.Point(170, 150);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new System.Drawing.Size(100, 30);
@@ -63,7 +63,7 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += new System.EventHandler(btnCancel_Click);
 
-            // Vlastnosti formuláře
+            // Vlastnosti
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(300, 210);
