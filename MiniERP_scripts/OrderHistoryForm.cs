@@ -7,7 +7,7 @@ namespace ERP3
 {
     public partial class OrderHistoryForm : Form
     {
-        // Připojovací řetězec k databázi
+        // Připojení
         private string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=MiniERP;Integrated Security=True;TrustServerCertificate=True;";
 
         public OrderHistoryForm()
@@ -15,13 +15,13 @@ namespace ERP3
             InitializeComponent();
         }
 
-        // Událost při načtení formuláře
+        // volání po aktualizaci
         private void OrderHistoryForm_Load(object sender, EventArgs e)
         {
             LoadOrders();
         }
 
-        // Načte objednávky z databáze a zobrazí je v tabulce
+        // aktualizace z databáze
         private void LoadOrders()
         {
             try
@@ -40,13 +40,13 @@ namespace ERP3
             }
         }
 
-        // Otevře formulář pro vytvoření nové objednávky
+        // Vytvoření nové objednávky - volání formuláře
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
             OrdersForm form = new OrdersForm();
             form.ShowDialog();
 
-            // Po zavření formuláře znovu načti historii objednávek
+            // Po zavření formuláře provede aktualizaci
             LoadOrders();
         }
     }
