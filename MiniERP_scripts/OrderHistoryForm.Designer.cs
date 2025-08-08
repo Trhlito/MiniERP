@@ -7,6 +7,7 @@
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Button btnCreateOrder;
 
+        // Uvolnění prostředků
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -14,6 +15,7 @@
             base.Dispose(disposing);
         }
 
+        // Ovladače 
         private void InitializeComponent()
         {
             this.dgvOrders = new System.Windows.Forms.DataGridView();
@@ -22,7 +24,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
 
-            // dgvOrders – tabulka pro zobrazení objednávek
+            // Zobrazení objednávek
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Location = new System.Drawing.Point(20, 20);
             this.dgvOrders.Name = "dgvOrders";
@@ -30,7 +32,7 @@
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrders.MultiSelect = false;
 
-            // btnCreateOrder – tlačítko pro vytvoření nové objednávky
+            // Tlačítko pro nové objednávky
             this.btnCreateOrder.Location = new System.Drawing.Point(20, 310);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(140, 30);
@@ -38,7 +40,7 @@
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
 
-            // OrderHistoryForm – konfigurace okna formuláře
+            // Vlastnosti 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 360);
