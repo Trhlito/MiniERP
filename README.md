@@ -1,7 +1,7 @@
 # MiniERP - Projekt
 
 # ------------------	Konzolová aplikace (C#)		------------------
-# --------------------------  ERP3  ------------------------------
+# --------------------------  ERP3  -------------------------------
 
 Toto je jednoduchá WinForms aplikace, kterou jsem vytvořil jako menší domácí projekt na procvičení práce s C# a SQL Serverem. Snažil jsem se udělat jednoduchý _ERP systém__ (něco jako základní evidence) s moduly pro zákazníky, produkty, objednávky a správu skladu.
 
