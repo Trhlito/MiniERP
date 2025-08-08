@@ -19,14 +19,14 @@ namespace ERP3
             string email = txtEmail.Text.Trim();
             string phone = txtPhone.Text.Trim();
 
-            // Kontrola povinných polí
+            // Kontrola nutných polí
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email))
             {
                 MessageBox.Show("Please fill in both name and email.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Definice připojení a SQL dotazu
+            // Připojení a SQL dotazy
             string connectionString = @"Server=localhost\SQLEXPRESS;Database=MiniERP;Trusted_Connection=True;TrustServerCertificate=True;";
             string query = "INSERT INTO Customers (Name, Email, Phone) VALUES (@Name, @Email, @Phone)";
 
@@ -59,7 +59,7 @@ namespace ERP3
             }
             catch (Exception ex)
             {
-                // Zobrazení chybové zprávy
+                // Chybová zpráva
                 MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
