@@ -8,6 +8,8 @@
         private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.Button btnRemoveStock;
 
+        
+        // Uvolnění prostředků
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -15,6 +17,8 @@
             base.Dispose(disposing);
         }
 
+        
+        // Ovladače 
         private void InitializeComponent()
         {
             this.dgvStock = new System.Windows.Forms.DataGridView();
@@ -26,7 +30,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
 
-            // DataGridView – tabulka zásob
+            // Tabulka zásob
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Location = new System.Drawing.Point(20, 20);
             this.dgvStock.Name = "dgvStock";
@@ -34,7 +38,7 @@
             this.dgvStock.Size = new System.Drawing.Size(500, 250);
             this.dgvStock.MultiSelect = false;
 
-            // NumericUpDown – pole pro zadání množství
+            // Pole pro zadání množství
             this.nudQuantity.Location = new System.Drawing.Point(20, 290);
             this.nudQuantity.Minimum = 1;
             this.nudQuantity.Maximum = 10000;
@@ -57,7 +61,7 @@
             this.btnRemoveStock.UseVisualStyleBackColor = true;
             this.btnRemoveStock.Click += new System.EventHandler(this.btnRemoveStock_Click);
 
-            // Nastavení formuláře
+            // Vlastnosti
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 350);
