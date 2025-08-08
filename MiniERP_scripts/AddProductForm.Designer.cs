@@ -17,7 +17,7 @@ namespace ERP3
             base.Dispose(disposing);
         }
 
-        // Inicializace ovládacích prvků formuláře
+        // Ovladače 
         private void InitializeComponent()
         {
             this.txtName = new System.Windows.Forms.TextBox();
@@ -28,19 +28,19 @@ namespace ERP3
 
             this.SuspendLayout();
 
-            // txtName – Pole pro název produktu
+            // Popisek pro pole "název produktu"
             this.txtName.Location = new System.Drawing.Point(30, 30);
             this.txtName.Name = "txtName";
             this.txtName.PlaceholderText = "Název produktu"; 
             this.txtName.Size = new System.Drawing.Size(240, 23);
 
-            // txtPrice – Pole pro zadání ceny
+            // Popisek pro pole "cena"
             this.txtPrice.Location = new System.Drawing.Point(30, 70);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PlaceholderText = "Cena"; 
             this.txtPrice.Size = new System.Drawing.Size(240, 23);
 
-            // cmbCategory – Výběr kategorie z předdefinovaných hodnot
+            // Popisek pro pole "kategorie"
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.Location = new System.Drawing.Point(30, 110);
             this.cmbCategory.Name = "cmbCategory";
@@ -51,7 +51,7 @@ namespace ERP3
                 "Příslušenství"
             });
 
-            // btnSave – Tlačítko pro uložení produktu
+            // Tlačítko pro uložení produktu
             this.btnSave.Location = new System.Drawing.Point(30, 150);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 30);
@@ -59,7 +59,7 @@ namespace ERP3
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 
-            // btnCancel – Tlačítko pro zrušení a zavření formuláře
+            // Tlačítko pro zrušení a zavření formuláře
             this.btnCancel.Location = new System.Drawing.Point(170, 150);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 30);
@@ -67,7 +67,7 @@ namespace ERP3
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 
-            // AddProductForm – Nastavení vlastností formuláře
+            // Vlastnosti formuláře
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 210);
