@@ -13,10 +13,10 @@ namespace ERP3
 
         private void btnHomepage_Click(object sender, EventArgs e)
         {
-            // Clear the content panel on the right
+            // Smazání obsahu - Vrácení na úvodní stránku
             panelContent.Controls.Clear();
 
-            // Add default welcome content
+            // Design pro Úvodní stránku
             Label lblWelcome = new Label();
             lblWelcome.Text = "Vítejte v systému MiniERP!";
             lblWelcome.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -26,6 +26,7 @@ namespace ERP3
             panelContent.Controls.Add(lblWelcome);
         }
 
+        // Přiřazení pro Zákazníky
         private void btnCustomers_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
@@ -39,6 +40,7 @@ namespace ERP3
             customersForm.Show();
         }
 
+        // Přiřazení pro Produkty
         private void btnProducts_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
@@ -52,6 +54,7 @@ namespace ERP3
             productsForm.Show();
         }
 
+        // Přiřazení pro Objednávky
         private void btnOrders_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
@@ -64,7 +67,7 @@ namespace ERP3
             panelContent.Controls.Add(orderHistoryForm);
             orderHistoryForm.Show();
         }
-
+        // Přiřazení pro Sklad
         private void btnStock_Click(object sender, EventArgs e)
         {
             panelContent.Controls.Clear();
@@ -78,6 +81,7 @@ namespace ERP3
             stockForm.Show();
         }
 
+        // Přiřazení pro ukončení - killnutí  
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -85,7 +89,7 @@ namespace ERP3
 
         private void label1_Click(object sender, EventArgs e)
         {
-            // Placeholder for potential label click logic
+            
         }
     }
 }
