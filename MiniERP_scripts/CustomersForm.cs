@@ -13,19 +13,19 @@ namespace ERP3
             InitializeComponent();
         }
 
-        // Metoda zavolaná při načtení formuláře – načte zákazníky z databáze
+        // Načtení zákazníků z databáze
         private void CustomersForm_Load(object sender, EventArgs e)
         {
             LoadCustomers();
         }
 
-        // Po kliknutí na tlačítko „Načíst zákazníky“ se znovu načte obsah ze serveru
+        // Načtení nového zákazníka
         private void btnLoadCustomers_Click(object sender, EventArgs e)
         {
             LoadCustomers();
         }
 
-        // Filtrování zákazníků podle zadaného textu ve vyhledávacím políčku
+        // Filtrování zákazníků
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string filterText = txtSearch.Text.Trim().Replace("'", "''");
@@ -35,7 +35,7 @@ namespace ERP3
             }
         }
 
-        // Načítání dat zákazníků z databáze a jejich zobrazení v datové mřížce
+        // Připojení a update
         private void LoadCustomers()
         {
             string connectionString = @"Server=localhost\SQLEXPRESS;Database=MiniERP;Trusted_Connection=True;TrustServerCertificate=True;";
@@ -58,7 +58,7 @@ namespace ERP3
             }
         }
 
-        // Otevře formulář pro přidání nového zákazníka a po úspěchu znovu načte tabulku
+        // Otevře formulář pro přidání zákazníka
         private void AddCustomer()
         {
             using (var dialog = new AddCustomerForm())
@@ -70,7 +70,7 @@ namespace ERP3
             }
         }
 
-        // Načte vybraného zákazníka do editačního formuláře a po uložení obnoví data
+        // Zvoleného zákazníka načte do formuláře úpravy zákazníka
         private void EditCustomer()
         {
             if (dataGridCustomers.SelectedRows.Count == 0)
@@ -94,7 +94,7 @@ namespace ERP3
             }
         }
 
-        // Smaže vybraného zákazníka po potvrzení akce
+        // Zvoleného zákazníka smaže
         private void DeleteCustomer()
         {
             if (dataGridCustomers.SelectedRows.Count == 0)
@@ -124,7 +124,7 @@ namespace ERP3
             }
         }
 
-        // Deklarace ovládacích prvků (přiřazené ve form designeru)
+        // Ovládací prvky
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.Button btnDeleteCustomer;
