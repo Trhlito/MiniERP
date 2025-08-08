@@ -4,14 +4,15 @@ namespace ERP3
     {
         private System.ComponentModel.IContainer components = null;
 
-        // Komponenty formuláře
-        private System.Windows.Forms.DataGridView dataGridProducts; // Tabulka produktů
-        private System.Windows.Forms.Button btnLoadProducts;        // Tlačítko pro načtení produktů z DB
-        private System.Windows.Forms.Button btnAddProduct;          // Tlačítko pro přidání nového produktu
-        private System.Windows.Forms.Button btnEditProduct;         // Tlačítko pro úpravu vybraného produktu
-        private System.Windows.Forms.Button btnDeleteProduct;       // Tlačítko pro smazání produktu
-        private System.Windows.Forms.TextBox txtSearchProduct;      // Textbox pro filtrování produktů
+        // Komponenty formuláře 
+        private System.Windows.Forms.DataGridView dataGridProducts; 
+        private System.Windows.Forms.Button btnLoadProducts;       
+        private System.Windows.Forms.Button btnAddProduct;          
+        private System.Windows.Forms.Button btnEditProduct;         
+        private System.Windows.Forms.Button btnDeleteProduct;       
+        private System.Windows.Forms.TextBox txtSearchProduct;      
 
+        // Uvolnění prostředků
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -19,6 +20,7 @@ namespace ERP3
             base.Dispose(disposing);
         }
 
+        // Ovladače 
         private void InitializeComponent()
         {
             // Inicializace komponent
@@ -40,7 +42,7 @@ namespace ERP3
             this.dataGridProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridProducts.MultiSelect = false;
 
-            // Tlačítko: Načíst produkty z databáze 
+            // Tlačítko pro Načtení produktů  
             this.btnLoadProducts.Location = new System.Drawing.Point(20, 310);
             this.btnLoadProducts.Name = "btnLoadProducts";
             this.btnLoadProducts.Size = new System.Drawing.Size(100, 30);
@@ -48,7 +50,7 @@ namespace ERP3
             this.btnLoadProducts.UseVisualStyleBackColor = true;
             this.btnLoadProducts.Click += new System.EventHandler(this.ProductsForm_Load);
 
-            // Tlačítko: Přidat nový produkt 
+            // Tlačítko pro nový produkt 
             this.btnAddProduct.Location = new System.Drawing.Point(130, 310);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(100, 30);
@@ -56,7 +58,7 @@ namespace ERP3
             this.btnAddProduct.UseVisualStyleBackColor = true;
             this.btnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
 
-            // Tlačítko: Upravit vybraný produkt 
+            // Tlačítko pro upravení produktu 
             this.btnEditProduct.Location = new System.Drawing.Point(240, 310);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(100, 30);
@@ -64,7 +66,7 @@ namespace ERP3
             this.btnEditProduct.UseVisualStyleBackColor = true;
             this.btnEditProduct.Click += new System.EventHandler(this.BtnEditProduct_Click);
 
-            // Tlačítko: Smazat vybraný produkt
+            // Tlačítko pro smazání produktu
             this.btnDeleteProduct.Location = new System.Drawing.Point(350, 310);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(100, 30);
@@ -72,14 +74,14 @@ namespace ERP3
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
             this.btnDeleteProduct.Click += new System.EventHandler(this.BtnDeleteProduct_Click);
 
-            // TextBox: Vyhledávání produktů 
+            // Pole pro Vyhledávání produktů 
             this.txtSearchProduct.Location = new System.Drawing.Point(20, 350);
             this.txtSearchProduct.Name = "txtSearchProduct";
             this.txtSearchProduct.Size = new System.Drawing.Size(740, 23);
             this.txtSearchProduct.PlaceholderText = "Hledat produkt...";
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
 
-            // ProductsForm (hlavní okno) 
+            // PVlastnosti
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 400);
