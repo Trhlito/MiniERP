@@ -20,7 +20,7 @@ namespace ERP3
             LoadStock();
         }
 
-        // Načtení dat o zásobách z databáze
+        // Načtení dat o zásobách z produktů
         private void LoadStock()
         {
             try
@@ -40,7 +40,7 @@ namespace ERP3
             }
         }
 
-        // Přidání množství ke skladu pro vybraný produkt
+        // Přidání množství
         private void btnAddStock_Click(object sender, EventArgs e)
         {
             if (dgvStock.SelectedRows.Count == 0)
@@ -73,7 +73,7 @@ namespace ERP3
             }
         }
 
-        // Odebrání množství ze skladu pro vybraný produkt
+        // Odebrání množství
         private void btnRemoveStock_Click(object sender, EventArgs e)
         {
             if (dgvStock.SelectedRows.Count == 0)
