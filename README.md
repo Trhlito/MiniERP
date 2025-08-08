@@ -23,8 +23,7 @@ Toto je jednoduchá WinForms aplikace, kterou jsem vytvořil jako menší domác
 
 1. Otevřít projekt v **Visual Studio 2022+**
 2. Ujistit se, že běží `SQL Server` a databáze `MiniERP` je dostupná
-3. Nastavit `LoginForm` jako výchozí formulář v `Program.cs`
-4. Spustit
+3. Spustit
 
 
 # ---------------------		Přihlášení				---------------------
@@ -73,5 +72,5 @@ Každý produkt má i svůj **ProductCode**, který se generuje automaticky podl
 
 ## Spuštění
 
-Pro úspěšné spuštění je zde přiložen soubor s názvem: MiniERP_SQL 
-pro načtení testovacích dat přiložen soubor s názvem: SQL_Prefab
+- Pro úspěšné spuštění je zde přiložen soubor s názvem: MiniERP_SQL 
+- Pro načtení testovacích dat přiložen soubor s názvem: SQL_Prefab
