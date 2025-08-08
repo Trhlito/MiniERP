@@ -21,7 +21,7 @@ namespace ERP3
             LoadProducts();
         }
 
-        // Načte produkty z databáze a zobrazí je v tabulce
+        // Připojení a update
         private void LoadProducts()
         {
             string connectionString = @"Server=localhost\SQLEXPRESS;Database=MiniERP;Trusted_Connection=True;TrustServerCertificate=True;";
@@ -42,7 +42,7 @@ namespace ERP3
             }
         }
 
-        // Otevře formulář pro přidání nového produktu
+        // Přidání nového produktu - formulář
         private void AddProduct()
         {
             using (var dialog = new AddProductForm())
@@ -54,7 +54,7 @@ namespace ERP3
             }
         }
 
-        // Otevře formulář pro úpravu vybraného produktu
+        // Úprava určeného produktu - formulář
         private void EditProduct()
         {
             if (dataGridProducts.SelectedRows.Count == 0)
@@ -87,7 +87,7 @@ namespace ERP3
             }
         }
 
-        // Smaže vybraný produkt z databáze
+        // Smazání určeného produktu
         private void DeleteProduct()
         {
             if (dataGridProducts.SelectedRows.Count == 0)
@@ -120,7 +120,7 @@ namespace ERP3
             }
         }
 
-        // Filtrování produktů podle textu ve vyhledávacím poli
+        // Filtrování produktů
         private void txtSearchProduct_TextChanged(object sender, EventArgs e)
         {
             string filterText = txtSearchProduct.Text.Trim().Replace("'", "''");
@@ -131,7 +131,7 @@ namespace ERP3
             }
         }
 
-        // Přiřazení funkcí ke kliknutím na tlačítka
+        // Přiřazení funkcí tlačítek
         private void BtnAddProduct_Click(object sender, EventArgs e) => AddProduct();
         private void BtnEditProduct_Click(object sender, EventArgs e) => EditProduct();
         private void BtnDeleteProduct_Click(object sender, EventArgs e) => DeleteProduct();
