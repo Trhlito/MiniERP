@@ -7,10 +7,10 @@ namespace ERP3
 {
     public partial class EditCustomerForm : Form
     {
-        // ID zákazníka, který má být upraven
+        // ID zákazníka
         private int customerId;
 
-        // Konstruktor formuláře – předání aktuálních hodnot zákazníka
+        // Předání aktuálních hodnot zákazníka
         public EditCustomerForm(int id, string name, string email, string phone)
         {
             InitializeComponent();
@@ -20,21 +20,21 @@ namespace ERP3
             txtPhone.Text = phone;
         }
 
-        // Uložení změn do databáze po kliknutí na tlačítko Save
+        // Uložení změn do databáze!
         private void btnSave_Click(object sender, EventArgs e)
         {
             string newName = txtName.Text.Trim();
             string newEmail = txtEmail.Text.Trim();
             string newPhone = txtPhone.Text.Trim();
 
-            // Validace povinných polí
+            // Validace nutných polí
             if (string.IsNullOrWhiteSpace(newName) || string.IsNullOrWhiteSpace(newEmail))
             {
                 MessageBox.Show("Please fill in both name and email.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // SQL připojení a dotaz pro aktualizaci zákazníka
+            // Připojení a dotaz(update) 
             string connectionString = @"Server=localhost\SQLEXPRESS;Database=MiniERP;Trusted_Connection=True;TrustServerCertificate=True;";
             string query = "UPDATE Customers SET Name = @Name, Email = @Email, Phone = @Phone WHERE CustomerID = @CustomerID";
 
