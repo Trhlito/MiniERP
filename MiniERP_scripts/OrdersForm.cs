@@ -8,7 +8,7 @@ namespace ERP3
 {
     public partial class OrdersForm : Form
     {
-        // Připojovací řetězec k databázi
+        // P
         private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=MiniERP;Integrated Security=True";
 
         public OrdersForm()
@@ -23,7 +23,7 @@ namespace ERP3
             LoadProducts();
         }
 
-        // Načtení zákazníků do ComboBoxu
+        // Načtení zákazníků (ComboBox)
         private void LoadCustomers()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -41,7 +41,7 @@ namespace ERP3
             }
         }
 
-        // Načtení produktů do tabulky a přidání sloupce Quantity
+        // Načtení produktů (tabulka) 
         private void LoadProducts()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -51,13 +51,13 @@ namespace ERP3
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
 
-                // Přidání sloupce pro zadání množství
+                // Sloupec pro zadání množství
                 dt.Columns.Add("Quantity", typeof(int));
                 dgvProducts.DataSource = dt;
             }
         }
 
-        // Vytvoření objednávky a uložení do databáze
+        // Nová objednávka / Uložení
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
             if (cmbCustomers.SelectedValue == null)
@@ -69,7 +69,7 @@ namespace ERP3
             int customerId = Convert.ToInt32(cmbCustomers.SelectedValue);
             List<OrderItem> orderItems = new List<OrderItem>();
 
-            // Procházení produktů a zjištění zadaného množství
+            // Cyklus pro Procházení produktů a zjištění zadaného množství
             foreach (DataGridViewRow row in dgvProducts.Rows)
             {
                 if (row.IsNewRow) continue;
@@ -99,7 +99,7 @@ namespace ERP3
 
             try
             {
-                // Příprava tabulky pro předání jako Table-Valued Parameter
+                // Příprava tabulky pro předání jako Table-Valued Parametr
                 var table = new DataTable();
                 table.Columns.Add("ProductID", typeof(int));
                 table.Columns.Add("Quantity", typeof(int));
@@ -135,7 +135,7 @@ namespace ERP3
         }
     }
 
-    // Reprezentace jedné položky objednávky
+
     public class OrderItem
     {
         public int ProductID { get; set; }
