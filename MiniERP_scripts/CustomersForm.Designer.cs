@@ -27,7 +27,7 @@ namespace ERP3
             ((System.ComponentModel.ISupportInitialize)dataGridCustomers).BeginInit();
             SuspendLayout();
 
-            // dataGridCustomers – tabulka zákazníků
+            // Tabulka "Customers"
             dataGridCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridCustomers.Location = new Point(20, 20);
             dataGridCustomers.MultiSelect = false;
@@ -36,7 +36,7 @@ namespace ERP3
             dataGridCustomers.Size = new Size(610, 280);
             dataGridCustomers.TabIndex = 0;
 
-            // btnLoadCustomers – tlačítko pro načtení zákazníků
+            // Tlačítko pro načtení zákazníků
             btnLoadCustomers.Location = new Point(20, 310);
             btnLoadCustomers.Name = "btnLoadCustomers";
             btnLoadCustomers.Size = new Size(150, 30);
@@ -44,7 +44,7 @@ namespace ERP3
             btnLoadCustomers.UseVisualStyleBackColor = true;
             btnLoadCustomers.Click += btnLoadCustomers_Click;
 
-            // btnAddCustomer – přidání zákazníka
+            // Tlačítko přidání zákazníka
             btnAddCustomer.Location = new Point(180, 310);
             btnAddCustomer.Name = "btnAddCustomer";
             btnAddCustomer.Size = new Size(130, 30);
@@ -52,7 +52,7 @@ namespace ERP3
             btnAddCustomer.UseVisualStyleBackColor = true;
             btnAddCustomer.Click += (s, e) => AddCustomer();
 
-            // btnEditCustomer – úprava zákazníka
+            // Tlačítko úprava zákazníka
             btnEditCustomer.Location = new Point(320, 310);
             btnEditCustomer.Name = "btnEditCustomer";
             btnEditCustomer.Size = new Size(130, 30);
@@ -60,7 +60,7 @@ namespace ERP3
             btnEditCustomer.UseVisualStyleBackColor = true;
             btnEditCustomer.Click += (s, e) => EditCustomer();
 
-            // btnDeleteCustomer – smazání zákazníka
+            // Tlačítko smazání zákazníka
             btnDeleteCustomer.Location = new Point(460, 310);
             btnDeleteCustomer.Name = "btnDeleteCustomer";
             btnDeleteCustomer.Size = new Size(130, 30);
@@ -68,14 +68,14 @@ namespace ERP3
             btnDeleteCustomer.UseVisualStyleBackColor = true;
             btnDeleteCustomer.Click += (s, e) => DeleteCustomer();
 
-            // txtSearch – hledání zákazníků
+            // Pole hledání zákazníků / Filtrování
             txtSearch.Location = new Point(20, 350);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Hledat zákazníka...";
             txtSearch.Size = new Size(610, 23);
             txtSearch.TextChanged += txtSearch_TextChanged;
 
-            // CustomersForm – nastavení okna
+            // Vlastnosti
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(652, 400);
