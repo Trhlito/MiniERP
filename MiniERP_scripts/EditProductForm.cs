@@ -8,7 +8,7 @@ namespace ERP3
     {
         private int productId;
 
-        // Konstruktor přijímá hodnoty pro předvyplnění polí formuláře
+        // Předání aktuálních hodnot produktů
         public EditProductForm(int id, string name, decimal price, string category)
         {
             InitializeComponent();
@@ -18,27 +18,27 @@ namespace ERP3
             cmbCategory.SelectedItem = category;
         }
 
-        // Uložení změn produktu do databáze
+        // Uložení změn 
         private void btnSave_Click(object sender, EventArgs e)
         {
             string name = txtName.Text.Trim();
             string category = cmbCategory.SelectedItem?.ToString();
 
-            // Validace ceny
+            // kontrola hodnoty - cena (nesmí být záporná)
             if (!decimal.TryParse(txtPrice.Text, out decimal price) || price < 0)
             {
                 MessageBox.Show("Neplatná cena.");
                 return;
             }
 
-            // Kontrola vyplnění všech polí
+            // Kontrola nutných polí
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(category))
             {
                 MessageBox.Show("Vyplňte prosím všechna pole.");
                 return;
             }
 
-            // Připojení k databázi a provedení aktualizačního dotazu
+            // Připojení a dotaz(update)
             string connectionString = @"Server=localhost\SQLEXPRESS;Database=MiniERP;Trusted_Connection=True;TrustServerCertificate=True;";
             string query = "UPDATE Products SET Name = @Name, Price = @Price, Category = @Category WHERE ProductID = @ProductID";
 
@@ -55,7 +55,7 @@ namespace ERP3
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Produkt byl úspěšně aktualizován.");
                 this.DialogResult = DialogResult.OK;
-                this.Close(); // Zavření formuláře po úspěchu
+                this.Close(); 
             }
             catch (Exception ex)
             {
@@ -63,7 +63,7 @@ namespace ERP3
             }
         }
 
-        // Zavření formuláře bez uložení
+        // Zrušení změn
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
